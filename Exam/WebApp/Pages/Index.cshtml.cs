@@ -30,11 +30,11 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnPostAsync()
     {
-        return Page();
+        return await Task.Run( () => Page());
     }
 
     public async Task<IActionResult> OnGetAsync()
     {
-        return RedirectToPage("/Tasks/Index");
+        return await Task.Run( () => RedirectToPage("/Tasks/Index"));
     }
 }

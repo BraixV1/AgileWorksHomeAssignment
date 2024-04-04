@@ -17,75 +17,67 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApp
 build_property.RootNamespace = WebApp
-build_property.ProjectDir = /Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/
+build_property.ProjectDir = C:\Users\Brajan\Documents\TalTech\AgileWorksHomeAssignemtn\AgileWorksHomeAssignment\Exam\WebApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp
+build_property.MSBuildProjectDirectory = C:\Users\Brajan\Documents\TalTech\AgileWorksHomeAssignemtn\AgileWorksHomeAssignment\Exam\WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Completed.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGFza3MvQ29tcGxldGVkLmNzaHRtbA==
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Completed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcQ29tcGxldGVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGFza3MvQ3JlYXRlLmNzaHRtbA==
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGFza3MvRGVsZXRlLmNzaHRtbA==
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGFza3MvRGV0YWlscy5jc2h0bWw=
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGFza3MvRWRpdC5jc2h0bWw=
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGFza3MvSW5kZXguY3NodG1s
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Tasks/_normalRow.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGFza3MvX25vcm1hbFJvdy5jc2h0bWw=
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/_redRow.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX3JlZFJvdy5jc2h0bWw=
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/brajankukk/Desktop/AgileWorksHomeAssignment/Exam/WebApp/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-qeb871jn8t
+[C:/Users/Brajan/Documents/TalTech/AgileWorksHomeAssignemtn/AgileWorksHomeAssignment/Exam/WebApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1lnhnt7yf2
