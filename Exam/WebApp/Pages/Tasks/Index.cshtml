@@ -1,0 +1,60 @@
+@page
+@using Domain.HelperEnums
+@model WebApp.Pages.Tasks.IndexModel
+
+@{
+    ViewData["Title"] = "Tasks";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDoTasks[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDoTasks[0].CreatedAtDt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToDoTasks[0].HasToBeDoneDt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ToDoTasks) {
+    if (item.Status == EStatus.NotCompleted)
+    {
+        var hoursDifference = (item.HasToBeDoneDt - DateTime.Now).TotalHours;
+        
+        Console.WriteLine(hoursDifference);
+
+        var rowColor = hoursDifference < 1 ? "text-danger" : "text-dark";
+        <tr class="@rowColor">
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAtDt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasToBeDoneDt)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a> |
+                <a asp-page="./Completed" asp-route-id="@item.Id">Complete Task</a>
+            </td>
+        </tr>
+        
+                
+    }
+}
+    </tbody>
+</table>
