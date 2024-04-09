@@ -28,7 +28,7 @@ namespace WebApp.Pages.Tasks
                 return NotFound();
             }
 
-            var todotasks = await _context.Tasks.FirstOrDefaultAsync(m => m.Id == id);
+            var todotasks = await _context.ToDoTasks.FirstOrDefaultAsync(m => m.Id == id);
             if (todotasks == null)
             {
                 return NotFound();

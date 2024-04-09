@@ -12,18 +12,18 @@ namespace DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Tasks",
+                name: "ToDoTasks",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 256, nullable: false),
-                    Status = table.Column<int>(type: "INTEGER", nullable: false),
+                    Description = table.Column<string>(type: "TEXT", nullable: false),
                     CreatedAtDt = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    HasToBeDoneDt = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    HasToBeDoneAtDt = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    CompletedAtDt = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tasks", x => x.Id);
+                    table.PrimaryKey("PK_ToDoTasks", x => x.Id);
                 });
         }
 
@@ -31,7 +31,7 @@ namespace DAL.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Tasks");
+                name: "ToDoTasks");
         }
     }
 }

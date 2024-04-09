@@ -8,11 +8,11 @@ namespace Domain
     {
         [MaxLength(256)]
         public string Description { get; set; } = default!;
-
-        public EStatus Status { get; set; } = EStatus.NotCompleted;
-
+    
         public DateTime CreatedAtDt { get; set; }
-
-        public DateTime HasToBeDoneDt { get; set; } = DateTime.Now;
+    
+        public DateTime HasToBeDoneAtDt { get; set; }
+    
+        public DateTime? CompletedAtDt { get; set; }
     }
 }

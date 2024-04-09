@@ -29,7 +29,7 @@ namespace WebApp.Pages.Tasks
                 return NotFound();
             }
 
-            var todotasks = await _context.Tasks.FirstOrDefaultAsync(m => m.Id == id);
+            var todotasks = await _context.ToDoTasks.FirstOrDefaultAsync(m => m.Id == id);
 
             if (todotasks == null)
             {
@@ -49,11 +49,11 @@ namespace WebApp.Pages.Tasks
                 return NotFound();
             }
 
-            var todotasks = await _context.Tasks.FindAsync(id);
+            var todotasks = await _context.ToDoTasks.FindAsync(id);
             if (todotasks != null)
             {
                 ToDoTasks = todotasks;
-                _context.Tasks.Remove(ToDoTasks);
+                _context.ToDoTasks.Remove(ToDoTasks);
                 await _context.SaveChangesAsync();
             }
 

@@ -36,7 +36,7 @@ namespace WebApp.Pages.Tasks
                 return Page();
             }
 
-            _context.Tasks.Add(ToDoTasks);
+            _context.ToDoTasks.Add(ToDoTasks);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

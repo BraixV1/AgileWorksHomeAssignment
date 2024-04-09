@@ -31,7 +31,7 @@ namespace WebApp.Pages.Tasks
                 return NotFound();
             }
 
-            var todotasks =  await _context.Tasks.FirstOrDefaultAsync(m => m.Id == id);
+            var todotasks =  await _context.ToDoTasks.FirstOrDefaultAsync(m => m.Id == id);
             if (todotasks == null)
             {
                 return NotFound();
@@ -49,7 +49,7 @@ namespace WebApp.Pages.Tasks
                 return Page();
             }
 
-            var existingTask = await _context.Tasks.FindAsync(ToDoTasks.Id);
+            var existingTask = await _context.ToDoTasks.FindAsync(ToDoTasks.Id);
             if (existingTask == null)
             {
                 return NotFound();
@@ -57,7 +57,6 @@ namespace WebApp.Pages.Tasks
 
             // Update the properties of the existing tracked entity
             existingTask.Description = ToDoTasks.Description;
-            existingTask.Status = ToDoTasks.Status;
             
             
 
@@ -86,7 +85,7 @@ namespace WebApp.Pages.Tasks
 
         private bool ToDoTasksExists(Guid id)
         {
-            return _context.Tasks.Any(e => e.Id == id);
+            return _context.ToDoTasks.Any(e => e.Id == id);
         }
     }
 }

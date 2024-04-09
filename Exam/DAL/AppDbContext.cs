@@ -7,7 +7,7 @@ namespace DAL;
 public class AppDbContext : DbContext
 { 
     
-    public DbSet<ToDoTasks> Tasks { get; set; } = default!;
+    public DbSet<ToDoTasks> ToDoTasks { get; set; } = default!;
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
