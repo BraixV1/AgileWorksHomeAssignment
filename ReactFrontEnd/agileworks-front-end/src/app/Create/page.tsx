@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter} from "next/navigation";
 import Link from "next/link";
 import {IFormInterface} from "@/components/IFormInterface";
+import ICreateEditForm from "@/components/ICreateEditForm"
 
 
 
@@ -33,30 +34,12 @@ export default function Create() {
                 <h4>ToDoTask</h4>
                 <hr />
                 <div className="row">
-        <div className="col-md-4">
-            <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="col-md-4">
+                        <ICreateEditForm defaultValues={ {description: '',
+                        createdAtDt: new Date(),
+                        hasToBeDoneAtDt: new Date()}} onSubmit={onSubmit}/>
+                    </div>
 
-                <div className="form-group">
-                    <label htmlFor="description">Description</label>
-                    <input {...register('description')} className="form-control" type="text" id="description" />
-                    <span className="text-danger"></span>
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="hasToBeDoneAtDt">HasToBeDoneAtDt</label>
-                    <input {...register('hasToBeDoneAtDt')} className="form-control" type="datetime-local" id="hasToBeDoneAtDt" />
-                    <span className="text-danger"></span>
-                </div>
-
-                <div className="form-group">
-                    <input type="submit" value="Create" className="btn btn-primary"/>
-                </div>
-            </form>
-        </div>
-                </div>
-
-                <div>
-                    <Link href={'../'}>Back to list</Link>
                 </div>
             </main>
         </div>

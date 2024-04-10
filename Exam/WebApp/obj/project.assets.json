@@ -8499,11 +8499,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Brajan\\Documents\\TalTech\\AgileWorksHomeAssignemtn\\AgileWorksHomeAssignment\\Exam\\WebApp\\WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\Brajan\\Documents\\TalTech\\Agileworks\\AgileWorksHomeAssignment\\Exam\\WebApp\\WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "C:\\Users\\Brajan\\Documents\\TalTech\\AgileWorksHomeAssignemtn\\AgileWorksHomeAssignment\\Exam\\WebApp\\WebApp.csproj",
+      "projectPath": "C:\\Users\\Brajan\\Documents\\TalTech\\Agileworks\\AgileWorksHomeAssignment\\Exam\\WebApp\\WebApp.csproj",
       "packagesPath": "C:\\Users\\Brajan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Brajan\\Documents\\TalTech\\AgileWorksHomeAssignemtn\\AgileWorksHomeAssignment\\Exam\\WebApp\\obj\\",
+      "outputPath": "C:\\Users\\Brajan\\Documents\\TalTech\\Agileworks\\AgileWorksHomeAssignment\\Exam\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Brajan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -8518,8 +8518,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Brajan\\Documents\\TalTech\\AgileWorksHomeAssignemtn\\AgileWorksHomeAssignment\\Exam\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\Brajan\\Documents\\TalTech\\AgileWorksHomeAssignemtn\\AgileWorksHomeAssignment\\Exam\\DAL\\DAL.csproj"
+            "C:\\Users\\Brajan\\Documents\\TalTech\\Agileworks\\AgileWorksHomeAssignment\\Exam\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\Brajan\\Documents\\TalTech\\Agileworks\\AgileWorksHomeAssignment\\Exam\\DAL\\DAL.csproj"
             }
           }
         }

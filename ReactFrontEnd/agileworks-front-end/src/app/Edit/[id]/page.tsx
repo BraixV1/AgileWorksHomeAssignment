@@ -1,13 +1,10 @@
 'use client'
 import React, {useEffect, useState} from 'react';
-import { useForm, SubmitHandler} from 'react-hook-form';
-import axios, {valueOf} from "axios";
+import { useForm} from 'react-hook-form';
+import axios from "axios";
 import {useRouter} from "next/navigation";
-import Link from "next/link";
-import {useParams} from "react-router";
-import * as sea from "node:sea";
-import {useTaskLoader} from "@/components/TaskLoader";
 import {IFormInterface} from "@/components/IFormInterface";
+import ICreateEditForm from '@/components/ICreateEditForm';
 
 
 type IformInput = {
@@ -21,16 +18,35 @@ export default function Edit({searchParams}: {searchParams?: IFormInterface}) {
     
     const {register, handleSubmit} = useForm<IformInput>();
     const router = useRouter();
+    const [loading, setLoading] = useState(true);
     if (searchParams === undefined) {
         return null;
     }
-    useTaskLoader(searchParams.id, searchParams);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`http://localhost:5035/api/Tasks/GetTask/${searchParams.id}`);
+            searchParams.description = response.data.description;
+            searchParams.createdAtDt = response.data.createdAtDt;
+            searchParams.hasToBeDoneAtDt = response.data.hasToBeDoneAtDt;
+            searchParams.completedAtDt = response.data.hasToBeDoneAtDt;
+            setLoading(false);
+        } catch(error) {
+            console.error('Error getting data for task' + error);
+            setLoading(false);
+        }
+    };
     
-    const onSubmit = async (data: IformInput) => {
+    const onSubmit = async (data: IFormInterface) => {
         try {
             await axios.patch('http://localhost:5035/api/Tasks/UpdateTask/'+ data.id, { // Updated endpoint URL
                 description: data.description,
-                createdAtDt: new Date(),
+                createdAtDt: searchParams.createdAtDt,
                 hasToBeDoneAtDt: data.hasToBeDoneAtDt,
                 id: data.id
             });
@@ -40,8 +56,12 @@ export default function Edit({searchParams}: {searchParams?: IFormInterface}) {
         }
     };
 
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
-  return (
+
+    return (
       <div className="container">
           <main role="main" className="pb-3">
               <h1>Create</h1>
@@ -50,32 +70,8 @@ export default function Edit({searchParams}: {searchParams?: IFormInterface}) {
               <hr/>
               <div className="row">
                   <div className="col-md-4">
-                      <form onSubmit={handleSubmit(onSubmit)}>
-                          <div className="form-group">
-                              <label htmlFor="description">Description</label>
-                              <input {...register('description')} value={searchParams.description} className="form-control" type="text"
-                                     id="description"/>
-                              <span className="text-danger"></span>
-                          </div>
-
-                          <div className="form-group">
-                              <label htmlFor="hasToBeDoneAtDt">HasToBeDoneAtDt</label>
-                              <input {...register('hasToBeDoneAtDt')} className="form-control" type="datetime-local"
-                                     id="hasToBeDoneAtDt"/>
-                              <span className="text-danger"></span>
-                          </div>
-
-                          <div className="form-group">
-                              <input type="submit" value="Create" className="btn btn-primary"/>
-                          </div>
-                          <input {...register('id')} type="hidden" data-val="true" data-val-required="The Id field is required." id="Id"
-                                 name="Id" value={searchParams.id}/>
-                      </form>
+                    <ICreateEditForm defaultValues={searchParams} onSubmit={onSubmit}/>              
                   </div>
-              </div>
-
-              <div>
-                  <Link href={'../'}>Back to list</Link>
               </div>
           </main>
       </div>

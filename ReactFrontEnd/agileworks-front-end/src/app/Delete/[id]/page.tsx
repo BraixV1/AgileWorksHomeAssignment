@@ -4,20 +4,40 @@ import Link from "next/link";
 import React, {useEffect, useState } from "react";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/navigation";
-import * as sea from "node:sea";
-import {useTaskLoader} from "@/components/TaskLoader";
 import {IFormInterface} from "@/components/IFormInterface";
 
 
 export default function Delete({searchParams}: {searchParams?: IFormInterface}) {
     const {register, handleSubmit,} = useForm<IFormInterface>();
+    const [loading, setLoading] = useState(true);
     const router = useRouter();
     
     if (searchParams === undefined) {
         return null;
-    } 
+    }
+    if (searchParams.description === undefined) {
+
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`http://localhost:5035/api/Tasks/GetTask/${searchParams.id}`);
+            searchParams.description = response.data.description;
+            searchParams.createdAtDt = response.data.createdAtDt;
+            searchParams.hasToBeDoneAtDt = response.data.hasToBeDoneAtDt;
+            searchParams.completedAtDt = response.data.hasToBeDoneAtDt;
+            setLoading(false);
+        } catch(error) {
+            console.error('Error getting data for task' + error);
+            setLoading(false);
+        }
+    };
     
-    useTaskLoader(searchParams.id, searchParams);
     
     
     const onSubmit = async (data: IFormInterface) => {
@@ -27,6 +47,10 @@ export default function Delete({searchParams}: {searchParams?: IFormInterface}) 
         } catch (error) {
             console.log('Error:', error);
         }
+    }
+
+    if (loading) {
+        return <div>Loading...</div>;
     }
     
     return (
@@ -51,13 +75,13 @@ export default function Delete({searchParams}: {searchParams?: IFormInterface}) 
                             Created At
                         </dt>
                         <dd className="col-sm-10">
-                            {searchParams.createdAtDt}
+                        {searchParams.createdAtDt instanceof Date ? searchParams.createdAtDt.toISOString() : searchParams.createdAtDt}
                         </dd>
                         <dt className="col-sm-2">
                             Has To be Done
                         </dt>
                         <dd className="col-sm-10">
-                            {searchParams.hasToBeDoneAtDt}
+                        {searchParams.hasToBeDoneAtDt instanceof Date ? searchParams.hasToBeDoneAtDt.toISOString() : searchParams.hasToBeDoneAtDt}
                         </dd>
                     </dl>
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dz33y6RlTV2isCB9Ng12oqk/bFcvSOWggXZeomjMGmg6P/R6Sgb2I5a0DcesRWcLLh6/eiFFYdEw2sX7OV7Jjg==",
+  "dgSpecHash": "lSjeb8XfSVpX+L83WeBzNEmVwuzfVwuP+sjELTN4HtYQNcWIbc78LNyBXhUslMAcOJMo8Aah/yVg/JgeGM/fdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Brajan\\Documents\\TalTech\\AgileWorksHomeAssignemtn\\AgileWorksHomeAssignment\\Exam\\WebApp\\WebApp.csproj",
+  "projectFilePath": "C:\\Users\\Brajan\\Documents\\TalTech\\Agileworks\\AgileWorksHomeAssignment\\Exam\\WebApp\\WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Brajan\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Brajan\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
