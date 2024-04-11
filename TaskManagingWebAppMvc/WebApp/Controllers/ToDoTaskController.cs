@@ -54,8 +54,9 @@ namespace WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Description,CreatedAtDt,HasToBeDoneAtDt,CompletedAtDt,Id")] ToDoTask toDoTask)
+        public async Task<IActionResult> Create([Bind("Description,HasToBeDoneAtDt,Id")] ToDoTask toDoTask)
         {
+            toDoTask.CreatedAtDt = DateTime.Now;
             if (ModelState.IsValid)
             {
                 toDoTask.Id = Guid.NewGuid();
