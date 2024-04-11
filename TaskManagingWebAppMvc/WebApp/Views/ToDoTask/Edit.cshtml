@@ -22,6 +22,7 @@
                 <input asp-for="HasToBeDoneAtDt" class="form-control" />
                 <span asp-validation-for="HasToBeDoneAtDt" class="text-danger"></span>
             </div>
+            <input type="hidden" asp-for="CreatedAtDt"/>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
