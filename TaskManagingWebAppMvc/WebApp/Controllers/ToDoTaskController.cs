@@ -20,8 +20,31 @@ namespace WebApp.Controllers
         }
 
         // GET: ToDoTask
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
+            return View(await _context.ToDoTasks.ToListAsync());
+        }
+        
+        // POST: ToDoTask
+        [HttpPost]
+        public async Task<IActionResult> Index(Guid? id)
+        {
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var toDoTask = await _context.ToDoTasks.FirstOrDefaultAsync(m => m.Id == id);
+            if (toDoTask == null)
+            {
+                return NotFound();
+            }
+            
+            toDoTask.CompletedAtDt = DateTime.Now;
+            _context.ToDoTasks.Update(toDoTask);
+            await _context.SaveChangesAsync();
             return View(await _context.ToDoTasks.ToListAsync());
         }
 
