@@ -51,6 +51,7 @@ public class TasksController : Controller
         {
             toDoTask.CompletedAtDt = DateTime.Now;
             _context.Attach(toDoTask).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
             return true;
         }
 

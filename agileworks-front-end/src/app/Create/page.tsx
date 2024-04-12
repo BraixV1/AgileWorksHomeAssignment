@@ -1,17 +1,13 @@
 'use client'
 import React from 'react';
 import axios from 'axios';
-import { useForm } from 'react-hook-form';
 import { useRouter} from "next/navigation";
-import Link from "next/link";
 import {IFormInterface} from "@/components/IFormInterface";
 import ICreateEditForm from "@/components/ICreateEditForm"
 
 
 
 export default function Create() {
-    const form = useForm<IFormInterface>();
-    const { register, handleSubmit } = form;
     const history = useRouter();
     const onSubmit = async (data: IFormInterface) => {
         try {

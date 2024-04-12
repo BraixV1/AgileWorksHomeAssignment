@@ -1,22 +1,13 @@
 'use client'
 import React, {useEffect, useState} from 'react';
-import { useForm} from 'react-hook-form';
 import axios from "axios";
 import {useRouter} from "next/navigation";
 import {IFormInterface} from "@/components/IFormInterface";
 import ICreateEditForm from '@/components/ICreateEditForm';
 
 
-type IformInput = {
-    description: string,
-    createdAtDt: Date,
-    hasToBeDoneAtDt: Date,
-    completedAtDt: Date,
-    id: string
-}
 export default function Edit({searchParams}: {searchParams?: IFormInterface}) {
     
-    const {register, handleSubmit} = useForm<IformInput>();
     const router = useRouter();
     const [loading, setLoading] = useState(true);
     if (searchParams === undefined) {
@@ -52,7 +43,7 @@ export default function Edit({searchParams}: {searchParams?: IFormInterface}) {
             });
             router.push('/')
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error: ', error);
         }
     };
 

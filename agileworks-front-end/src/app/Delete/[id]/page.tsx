@@ -42,7 +42,7 @@ export default function Delete({searchParams}: {searchParams?: IFormInterface}) 
     
     const onSubmit = async (data: IFormInterface) => {
         try {
-            await axios.delete('http://localhost:5035/api/Tasks/DeleteTask/' + data.id, {id: data.id});
+            await axios.delete('http://localhost:5035/api/Tasks/DeleteTask/' + data.id, {params: {id: data.id}});
             router.push('/')
         } catch (error) {
             console.log('Error:', error);
@@ -50,7 +50,11 @@ export default function Delete({searchParams}: {searchParams?: IFormInterface}) 
     }
 
     if (loading) {
-        return <div>Loading...</div>;
+        return (
+            <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
+            </div>
+        );
     }
     
     return (
@@ -88,7 +92,7 @@ export default function Delete({searchParams}: {searchParams?: IFormInterface}) 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input {...register('id')} type="hidden" data-val="true" data-val-required="The Id field is required." id="Id"
                                name="Id" value={searchParams.id}/>
-                        <input type="submit" value="Delete" className="btn btn-danger"/> |
+                        <input type="submit" value="Delete" className=""/> |
                         <Link href={'../'}>Back to list</Link>
                    </form>
                     
