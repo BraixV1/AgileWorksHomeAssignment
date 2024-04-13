@@ -1,17 +1,18 @@
 'use client';
 import axios from "axios";
 import Link from "next/link";
-import React, {useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/navigation";
 import {IFormInterface} from "@/components/IFormInterface";
+import LoadingScreen from "@/components/LoadingScreen";
 
 
-export default function Delete({searchParams}: {searchParams?: IFormInterface}) {
+export default function Delete({searchParams}: { searchParams?: IFormInterface }) {
     const {register, handleSubmit,} = useForm<IFormInterface>();
     const [loading, setLoading] = useState(true);
     const router = useRouter();
-    
+
     if (searchParams === undefined) {
         return null;
     }
@@ -32,14 +33,13 @@ export default function Delete({searchParams}: {searchParams?: IFormInterface}) 
             searchParams.hasToBeDoneAtDt = response.data.hasToBeDoneAtDt;
             searchParams.completedAtDt = response.data.hasToBeDoneAtDt;
             setLoading(false);
-        } catch(error) {
+        } catch (error) {
             console.error('Error getting data for task' + error);
             setLoading(false);
         }
     };
-    
-    
-    
+
+
     const onSubmit = async (data: IFormInterface) => {
         try {
             await axios.delete('http://localhost:5035/api/Tasks/DeleteTask/' + data.id, {params: {id: data.id}});
@@ -50,13 +50,9 @@ export default function Delete({searchParams}: {searchParams?: IFormInterface}) 
     }
 
     if (loading) {
-        return (
-            <div className="spinner-border" role="status">
-                <span className="sr-only">Loading...</span>
-            </div>
-        );
+        return <LoadingScreen/>;
     }
-    
+
     return (
         <div className="container">
             <main role="main" className="pb-3">
@@ -79,23 +75,24 @@ export default function Delete({searchParams}: {searchParams?: IFormInterface}) 
                             Created At
                         </dt>
                         <dd className="col-sm-10">
-                        {searchParams.createdAtDt instanceof Date ? searchParams.createdAtDt.toISOString() : searchParams.createdAtDt}
+                            {searchParams.createdAtDt instanceof Date ? searchParams.createdAtDt.toISOString() : searchParams.createdAtDt}
                         </dd>
                         <dt className="col-sm-2">
                             Has To be Done
                         </dt>
                         <dd className="col-sm-10">
-                        {searchParams.hasToBeDoneAtDt instanceof Date ? searchParams.hasToBeDoneAtDt.toISOString() : searchParams.hasToBeDoneAtDt}
+                            {searchParams.hasToBeDoneAtDt instanceof Date ? searchParams.hasToBeDoneAtDt.toISOString() : searchParams.hasToBeDoneAtDt}
                         </dd>
                     </dl>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input {...register('id')} type="hidden" data-val="true" data-val-required="The Id field is required." id="Id"
+                        <input {...register('id')} type="hidden" data-val="true"
+                               data-val-required="The Id field is required." id="Id"
                                name="Id" value={searchParams.id}/>
                         <input type="submit" value="Delete" className=""/> |
                         <Link href={'../'}>Back to list</Link>
-                   </form>
-                    
+                    </form>
+
                 </div>
 
             </main>

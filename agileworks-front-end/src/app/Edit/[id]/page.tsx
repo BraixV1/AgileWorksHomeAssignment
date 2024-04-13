@@ -4,10 +4,11 @@ import axios from "axios";
 import {useRouter} from "next/navigation";
 import {IFormInterface} from "@/components/IFormInterface";
 import ICreateEditForm from '@/components/ICreateEditForm';
+import LoadingScreen from '@/components/LoadingScreen';
 
 
-export default function Edit({searchParams}: {searchParams?: IFormInterface}) {
-    
+export default function Edit({searchParams}: { searchParams?: IFormInterface }) {
+
     const router = useRouter();
     const [loading, setLoading] = useState(true);
     if (searchParams === undefined) {
@@ -27,15 +28,15 @@ export default function Edit({searchParams}: {searchParams?: IFormInterface}) {
             searchParams.hasToBeDoneAtDt = response.data.hasToBeDoneAtDt;
             searchParams.completedAtDt = response.data.hasToBeDoneAtDt;
             setLoading(false);
-        } catch(error) {
+        } catch (error) {
             console.error('Error getting data for task' + error);
             setLoading(false);
         }
     };
-    
+
     const onSubmit = async (data: IFormInterface) => {
         try {
-            await axios.patch('http://localhost:5035/api/Tasks/UpdateTask/'+ data.id, { // Updated endpoint URL
+            await axios.patch('http://localhost:5035/api/Tasks/UpdateTask/' + data.id, { // Updated endpoint URL
                 description: data.description,
                 createdAtDt: searchParams.createdAtDt,
                 hasToBeDoneAtDt: data.hasToBeDoneAtDt,
@@ -48,24 +49,24 @@ export default function Edit({searchParams}: {searchParams?: IFormInterface}) {
     };
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <LoadingScreen/>;
     }
 
 
     return (
-      <div className="container">
-          <main role="main" className="pb-3">
-              <h1>Create</h1>
+        <div className="container">
+            <main role="main" className="pb-3">
+                <h1>Create</h1>
 
-              <h4>ToDoTask</h4>
-              <hr/>
-              <div className="row">
-                  <div className="col-md-4">
-                    <ICreateEditForm defaultValues={searchParams} onSubmit={onSubmit}/>              
-                  </div>
-              </div>
-          </main>
-      </div>
-  );
+                <h4>ToDoTask</h4>
+                <hr/>
+                <div className="row">
+                    <div className="col-md-4">
+                        <ICreateEditForm defaultValues={searchParams} onSubmit={onSubmit}/>
+                    </div>
+                </div>
+            </main>
+        </div>
+    );
 }
 

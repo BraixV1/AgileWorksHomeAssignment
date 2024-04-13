@@ -29,8 +29,6 @@
     <tbody>
 @foreach (var item in Model.ToDoTasks) {
     var hoursDifference = (item.HasToBeDoneAtDt - DateTime.Now).TotalHours;
-        
-    Console.WriteLine(hoursDifference);
 
     var rowColor = hoursDifference < 1 ? "text-danger" : "text-dark";
     

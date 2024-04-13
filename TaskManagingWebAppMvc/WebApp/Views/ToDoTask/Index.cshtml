@@ -11,47 +11,49 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAtDt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HasToBeDoneAtDt)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedAtDt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasToBeDoneAtDt)
+        </th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-    var hoursDifference = (item.HasToBeDoneAtDt - DateTime.Now).TotalHours;
-    
+    @foreach (var item in Model)
+    {
+        var hoursDifference = (item.HasToBeDoneAtDt - DateTime.Now).TotalHours;
+        var rowColor = hoursDifference < 1 ? "text-danger" : "text-dark";
 
-    var rowColor = hoursDifference < 1 ? "text-danger" : "text-dark";
-    
-    if (item.CompletedAtDt != null) {continue;}
-    <tr class="@rowColor">>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedAtDt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasToBeDoneAtDt)
-        </td>
-        <td>
-            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
-            <form asp-page-handler="button" method="post" asp-route-id="@item.Id">
-                <button class="btn btn-default, text-success">Complete task</button>
-            </form>
-            
-        </td>
-    </tr>
-}
+        if (item.CompletedAtDt != null)
+        {
+            continue;
+        }
+
+        <tr class="@rowColor">
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAtDt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasToBeDoneAtDt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                <form asp-page-handler="button" method="post" asp-route-id="@item.Id">
+                    <button class="btn btn-default, text-success">Complete task</button>
+                </form>
+
+            </td>
+        </tr>
+    }
     </tbody>
 </table>

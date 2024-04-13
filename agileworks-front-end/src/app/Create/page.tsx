@@ -1,10 +1,9 @@
 'use client'
 import React from 'react';
 import axios from 'axios';
-import { useRouter} from "next/navigation";
+import {useRouter} from "next/navigation";
 import {IFormInterface} from "@/components/IFormInterface";
 import ICreateEditForm from "@/components/ICreateEditForm"
-
 
 
 export default function Create() {
@@ -28,12 +27,14 @@ export default function Create() {
                 <h1>Create</h1>
 
                 <h4>ToDoTask</h4>
-                <hr />
+                <hr/>
                 <div className="row">
                     <div className="col-md-4">
-                        <ICreateEditForm defaultValues={ {description: '',
-                        createdAtDt: new Date(),
-                        hasToBeDoneAtDt: new Date()}} onSubmit={onSubmit}/>
+                        <ICreateEditForm defaultValues={{
+                            description: '',
+                            createdAtDt: new Date(),
+                            hasToBeDoneAtDt: new Date()
+                        }} onSubmit={onSubmit}/>
                     </div>
 
                 </div>

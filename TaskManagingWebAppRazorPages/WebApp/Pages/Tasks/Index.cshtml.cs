@@ -26,7 +26,7 @@ namespace WebApp.Pages.Tasks
         public async Task OnGetAsync()
         {
             ToDoTasks = await _context.ToDoTasks.ToListAsync();
-            ToDoTasks = ToDoTasks.OrderBy(m => m.HasToBeDoneAtDt).ToList();
+            ToDoTasks = ToDoTasks.OrderByDescending(m => m.HasToBeDoneAtDt).ToList();
         }
 
         public async Task<IActionResult> OnPostAsync(Guid? id)

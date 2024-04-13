@@ -2,8 +2,8 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.Swagger;
 
-var builder = WebApplication.CreateBuilder(args);
 
+var builder = WebApplication.CreateBuilder(args);
 
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
@@ -19,7 +19,6 @@ builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
 
 
 // Configure the HTTP request pipeline.
@@ -40,7 +39,11 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=ToDoTask}/{action=Index}/{id?}");
+    "default",
+    "{controller=ToDoTask}/{action=Index}/{id?}");
 
 app.Run();
+
+public partial class Program
+{
+}
