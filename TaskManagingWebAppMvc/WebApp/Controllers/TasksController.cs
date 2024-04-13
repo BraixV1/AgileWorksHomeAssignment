@@ -38,7 +38,7 @@ public class TasksController : Controller
     /// <summary>
     /// Add new task to database
     /// </summary>
-    /// <returns>the added object or returns error</returns>
+    /// <returns>the added object or returns 400 Bad Request and lets user know what is missing</returns>
     [HttpPost]
     [Route("AddTask")]
     [ProducesResponseType<ToDoTask>((int)HttpStatusCode.OK)]
@@ -67,7 +67,7 @@ public class TasksController : Controller
     /// <summary>
     /// Update the task that was given
     /// </summary>
-    /// <returns>returns the updated object</returns>
+    /// <returns>returns the updated object or 400 Bad Request</returns>
     [HttpPatch]
     [Route("UpdateTask/{id}")]
     [ProducesResponseType<ToDoTask>((int)HttpStatusCode.OK)]
@@ -99,7 +99,7 @@ public class TasksController : Controller
     /// <summary>
     /// Will give not completed task a completed at time stamp so it will marked as completed
     /// </summary>
-    /// <returns>true if it managed to find the task and set it's completeAtDt to server time</returns>
+    /// <returns>200 if it managed to find the task and set it's completeAtDt to server time if it  fails returns 404</returns>
     [HttpPatch]
     [Route("CompleteTask/{id}")]
     [ProducesResponseType<bool>((int)HttpStatusCode.OK)]
@@ -123,7 +123,7 @@ public class TasksController : Controller
     /// <summary>
     /// Deletes task that has same id as given
     /// </summary>
-    /// <returns>returns True if managed to delete it and false if it didn't find the task</returns>
+    /// <returns>returns 200 if managed to delete it and 404 if it didn't find the task</returns>
     [HttpDelete]
     [Route("DeleteTask/{id}")]
     [ProducesResponseType<ToDoTask>((int)HttpStatusCode.OK)]
