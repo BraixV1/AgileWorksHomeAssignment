@@ -43,7 +43,3 @@ app.MapControllerRoute(
     "{controller=ToDoTask}/{action=Index}/{id?}");
 
 app.Run();
-
-public partial class Program
-{
-}
