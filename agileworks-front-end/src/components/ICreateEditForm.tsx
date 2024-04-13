@@ -28,8 +28,8 @@ const ICreateEditForm: React.FC<TaskFormProps> = ({defaultValues, onSubmit}) => 
         <form onSubmit={handleSubmit(submitHandler)}>
             <div className="form-group">
                 <label htmlFor="description">Description</label>
-                <input {...register('description')} defaultValue={defaultValues.description} className="form-control"
-                       type="text" id="description"/>
+                <textarea {...register('description')} defaultValue={defaultValues.description} className="form-control"
+                        id="description"/>
                 <span className="text-danger"></span>
             </div>
 

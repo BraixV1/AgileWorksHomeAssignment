@@ -44,7 +44,7 @@ export default function Home() {
     return (
         <div className="container">
             <main role="main" className="pb-3">
-                <h1>Index</h1>
+                <h1>Tasks</h1>
                 <p>
                     <Link href="/Create">Create New</Link>
                 </p>
@@ -52,9 +52,8 @@ export default function Home() {
                     <thead>
                     <tr>
                         <th>Description</th>
-                        <th>CreatedAtDt</th>
-                        <th>HasToBeDoneAtDt</th>
-                        <th></th>
+                        <th>Created At</th>
+                        <th>Has to be done</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -90,7 +89,7 @@ export default function Home() {
                                             Delete</Link>
                                         <form onSubmit={handleSubmit(onSubmit)}>
                                             <input {...register('id')} value={task.id} type="hidden"/>
-                                            <input type="submit" value='Submit' className="btn btn-primary"/>
+                                            <input type="submit" value='Complete Task' className="btn btn-outline-success btn-sm"/>
                                         </form>
                                     </td>
                                 </tr>

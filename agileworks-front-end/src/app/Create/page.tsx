@@ -24,9 +24,9 @@ export default function Create() {
     return (
         <div className="container">
             <main role="main" className="pb-3">
-                <h1>Create</h1>
+                <h1>Create new Task</h1>
 
-                <h4>ToDoTask</h4>
+                <h4>Task</h4>
                 <hr/>
                 <div className="row">
                     <div className="col-md-4">
