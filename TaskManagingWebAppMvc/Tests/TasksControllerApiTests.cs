@@ -1,12 +1,9 @@
-using System.Net;
-using System.Text;
+using System.Globalization;
 using DAL;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using WebApp.Controllers;
-using Xunit.Abstractions;
 using Guid = System.Guid;
 
 namespace Tests;
@@ -36,26 +33,26 @@ public class TasksControllerTests
         // Arrange
         var count = _datastore.ToDoTasks.Count();
 
-        var MockTasks = new List<ToDoTask>()
+        var mockTasks = new List<ToDoTask>()
         {
             new()
             {
-                Description = "Test1", HasToBeDoneAtDt = DateTime.Parse("21-12-2004"),
+                Description = "Test1", HasToBeDoneAtDt = DateTime.ParseExact("21-12-2004", "dd-mm-yyyy", CultureInfo.InvariantCulture),
                 CreatedAtDt = DateTime.Parse("04-12-2004")
             },
             new()
             {
                 Description = "Test2", HasToBeDoneAtDt = DateTime.Parse("05-07-2044"),
-                CreatedAtDt = DateTime.Parse("01-12-2003"), CompletedAtDt = DateTime.Parse("01-12-2024")
+                CreatedAtDt = DateTime.Parse("01-12-2003"), CompletedAtDt = DateTime.ParseExact("01-12-2024", "dd-mm-yyyy", CultureInfo.InvariantCulture)
             },
             new()
             {
-                Description = "Test3", HasToBeDoneAtDt = DateTime.Parse("02-03-2022"),
+                Description = "Test3", HasToBeDoneAtDt = DateTime.ParseExact("02-03-2022", "dd-mm-yyyy", CultureInfo.InvariantCulture),
                 CreatedAtDt = DateTime.Parse("04-12-2007")
             }
         };
 
-        foreach (var task in MockTasks) _datastore.Add(task);
+        foreach (var task in mockTasks) _datastore.Add(task);
         await _datastore.SaveChangesAsync();
 
 
@@ -75,7 +72,7 @@ public class TasksControllerTests
         // Arrange
         var task = new ToDoTask
         {
-            Description = "Test1", HasToBeDoneAtDt = DateTime.Parse("21-12-2004"),
+            Description = "Test1", HasToBeDoneAtDt = DateTime.ParseExact("21-12-2004", "dd-mm-yyyy", CultureInfo.InvariantCulture),
             CreatedAtDt = DateTime.Parse("04-12-2004")
         };
 
@@ -113,9 +110,9 @@ public class TasksControllerTests
         var task = new ToDoTask
         {
             Description = "Test2",
-            HasToBeDoneAtDt = DateTime.Parse("05-07-2044"),
-            CreatedAtDt = DateTime.Parse("01-12-2003"),
-            CompletedAtDt = DateTime.Parse("01-12-2024"),
+            HasToBeDoneAtDt = DateTime.ParseExact("05-07-2044", "dd-mm-yyyy", CultureInfo.InvariantCulture),
+            CreatedAtDt = DateTime.ParseExact("01-12-2003", "dd-mm-yyyy", CultureInfo.InvariantCulture),
+            CompletedAtDt = DateTime.ParseExact("01-12-2024", "dd-mm-yyyy", CultureInfo.InvariantCulture),
             Id = Guid.NewGuid()
         };
 
@@ -126,9 +123,9 @@ public class TasksControllerTests
         var updatedTask = new ToDoTask
         {
             Description = "Test2 Edited",
-            HasToBeDoneAtDt = DateTime.Parse("05-07-2043"),
-            CreatedAtDt = DateTime.Parse("01-12-2003"),
-            CompletedAtDt = DateTime.Parse("01-12-2024"),
+            HasToBeDoneAtDt = DateTime.ParseExact("05-07-2043", "dd-mm-yyyy", CultureInfo.InvariantCulture),
+            CreatedAtDt = DateTime.ParseExact("01-12-2003", "dd-mm-yyyy", CultureInfo.InvariantCulture),
+            CompletedAtDt = DateTime.ParseExact("01-12-2024", "dd-mm-yyyy", CultureInfo.InvariantCulture),
             Id = task.Id
         };
 
@@ -152,9 +149,9 @@ public class TasksControllerTests
         var task = new ToDoTask
         {
             Description = "Test3 Edited",
-            HasToBeDoneAtDt = DateTime.Parse("05-07-2043"),
-            CreatedAtDt = DateTime.Parse("01-12-2003"),
-            CompletedAtDt = DateTime.Parse("01-12-2024"),
+            HasToBeDoneAtDt = DateTime.ParseExact("05-07-2043", "dd-mm-yyyy", CultureInfo.InvariantCulture),
+            CreatedAtDt = DateTime.ParseExact("01-12-2003", "dd-mm-yyyy", CultureInfo.InvariantCulture),
+            CompletedAtDt = DateTime.ParseExact("01-12-2024", "dd-mm-yyyy", CultureInfo.InvariantCulture),
             Id = Guid.NewGuid()
         };
 
@@ -172,8 +169,8 @@ public class TasksControllerTests
         var task = new ToDoTask
         {
             Description = "Test3 Edited",
-            HasToBeDoneAtDt = DateTime.Parse("05-07-2043"),
-            CreatedAtDt = DateTime.Parse("01-12-2003"),
+            HasToBeDoneAtDt = DateTime.ParseExact("05-07-2043", "dd-mm-yyyy", CultureInfo.InvariantCulture),
+            CreatedAtDt = DateTime.ParseExact("01-12-2003", "dd-mm-yyyy", CultureInfo.InvariantCulture),
             Id = Guid.NewGuid()
         };
 
@@ -213,8 +210,8 @@ public class TasksControllerTests
         var task = new ToDoTask
         {
             Description = "Test3 Edited",
-            HasToBeDoneAtDt = DateTime.Parse("05-07-2043"),
-            CreatedAtDt = DateTime.Parse("01-12-2003"),
+            HasToBeDoneAtDt = DateTime.ParseExact("05-07-2043", "dd-mm-yyyy", CultureInfo.InvariantCulture),
+            CreatedAtDt = DateTime.ParseExact("01-12-2003", "dd-mm-yyyy", CultureInfo.InvariantCulture),
             Id = Guid.NewGuid()
         };
 
@@ -252,8 +249,8 @@ public class TasksControllerTests
         var task = new ToDoTask
         {
             Description = "Test3 Edited",
-            HasToBeDoneAtDt = DateTime.Parse("05-07-2043"),
-            CreatedAtDt = DateTime.Parse("01-12-2003"),
+            HasToBeDoneAtDt = DateTime.ParseExact("05-07-2043", "dd-mm-yyyy", CultureInfo.InvariantCulture),
+            CreatedAtDt = DateTime.ParseExact("01-12-2003", "dd-mm-yyyy", CultureInfo.InvariantCulture),
             Id = Guid.NewGuid()
         };
 

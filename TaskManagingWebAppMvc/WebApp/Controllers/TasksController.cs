@@ -154,7 +154,6 @@ public class TasksController : Controller
     {
         var toDoTask = await _context.ToDoTasks.FindAsync(id);
         if (toDoTask == null) return NotFound("Task not found");
-
         return Ok(toDoTask);
     }
 }
